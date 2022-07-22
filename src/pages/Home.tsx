@@ -1,11 +1,16 @@
 import styled from "styled-components";
 import Logo from "../assets/images/logo.svg";
 import Menu from "../assets/images/icon-menu.svg";
+
 import ArtMobile from "../assets/images/image-hero-mobile.png";
+import ArtDesktop from '../assets/images/image-hero-desktop.png'
 import Ads1 from "../assets/images/client-databiz.svg";
 import Ads2 from "../assets/images/client-audiophile.svg";
 import Ads3 from "../assets/images/client-meet.svg";
 import Ads4 from "../assets/images/client-maker.svg";
+
+import { MenuMobile } from "../components/MenuMobile";
+import { useState } from "react";
 
 const Container = styled.div`
   width: 100vw;
@@ -22,8 +27,8 @@ const MainContent = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px 0;
-  gap:20px;
+  margin: 15px 0;
+  gap:15px;
 `;
 const BoxImage = styled.section`
   background: url(${ArtMobile}) no-repeat;
@@ -34,11 +39,13 @@ const BoxImage = styled.section`
 const Title = styled.h1`
   font-size: 1.8rem;
 `;
-const TextParagraph = styled.span`
-  font-size: 0.9rem;
+const TextParagraph = styled.p`
+  font-size: 0.8rem;
   font-weight: 500;
   color: var(--medium-Gray);
   text-align: center;
+  margin:0 40px;
+  line-height: 20px;
 `;
 const BtnLearnMore = styled.button`
   background-color: var(--almost-Black);
@@ -54,17 +61,20 @@ const Footer = styled.footer`
   width:100%;
   margin-top: 20px;
   img {
-    width: 12%;
-    height:90%;
+    width: 50px;
+    height: 20px;
   }
 `;
 
 const Home = () => {
-  return (
+    const [openMenu, setOpenMenu] = useState(false)
+   
+    const handleMenu = () => setOpenMenu(!openMenu) 
+    return (
     <Container>
       <Header>
         <img src={Logo} alt="Logmarca" />
-        <img src={Menu} alt="Icon menu" />
+        <img src={Menu} alt="Icon menu" onClick={handleMenu}/>
       </Header>
       <BoxImage />
       <MainContent>
@@ -82,6 +92,9 @@ const Home = () => {
       <img src={Ads3} alt='ads'/> 
       <img src={Ads4} alt='ads'/> 
       </Footer>
+       {    openMenu === true && 
+           <MenuMobile handleMenu={handleMenu}/>  
+        }
     </Container>
   );
 };
