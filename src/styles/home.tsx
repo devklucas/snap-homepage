@@ -5,6 +5,7 @@ import ArtDesktop from '../assets/images/image-hero-desktop.png'
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
+  background-color:var(--almost-White);
 `;
 const Header = styled.header`
   width: 100%;
