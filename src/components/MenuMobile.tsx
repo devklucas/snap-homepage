@@ -37,23 +37,8 @@ const ContainerMenu = styled.aside`
         border: 0.8px solid var(--medium-Gray);
     }
     @media (min-width: 426px){
-        position:relative;
-        height:10vh;
-        width:100%;
-        display: flex;
-        box-shadow: none;
-        font-size:1rem;
-        ul{
-            display:flex;
-            align-items:center;
-            gap:20px;
-        }
-        li{
-            margin:0;
-            margin-left: 1rem;
-            cursor:pointer;
-        }
-    }
+        display:none;
+    } 
 `
 const Buttons = styled.button`
     width:90%;
@@ -62,28 +47,13 @@ const Buttons = styled.button`
     background-color: transparent;
     border:none;
     color: var(--medium-Gray);
-    @media (min-width: 426px){
-        margin:0;
-        width: 120px;
-        height:50%;
-        font-size: 1rem;
-    }
+    
 `
 const Navigation = styled.nav`
         display:flex;
         flex-direction: column;
         justify-content:center;
         margin-top: 50px;
-    @media (min-width: 426px){
-        width:95%;
-        height:100%;
-        flex-direction: row;
-        align-items:center;
-        justify-content: space-between;
-        margin:0;
-        padding-left: 10px;
-        border:1px solid black;
-    }
 `
 const NavSelects = styled.li`
     nav{
@@ -92,21 +62,6 @@ const NavSelects = styled.li`
         margin:10px;
         margin-left: 20px;
         gap:15px;
-    }
-    @media (min-width: 426px){
-        position:relative;
-        nav{
-            position:absolute;
-            background-color:var(--almost-White); 
-            box-shadow: 0 0 1em var(--medium-Gray);  
-            padding:20px;
-            margin-top:10px;
-            margin-left:0px;
-        }
-        span{
-            display:flex;
-            align-items:center;
-        }
     }
 ` 
 const OptionsSelects  = styled.button`
@@ -119,20 +74,11 @@ const OptionsSelects  = styled.button`
     img{
         margin-right:10px;
     }
-    @media (min-width: 426px){
-        width:max-content;
-        img{
-            margin-left: 10px;
-        }
-    }   
 `
 const BtnClose = styled.img`
     position: absolute;
     right:10px;
-    top:10px;
-    @media (min-width: 426px){
-        display:none;
-    }   
+    top:10px;  
 `
 
 const MenuMobile = ({handleMenu} : Props) => {
