@@ -18,7 +18,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: https://card-nft-preview-bice.vercel.app/
+- Solution URL: https://challenge-six-sooty.vercel.app/
 
 
 ### Built with
